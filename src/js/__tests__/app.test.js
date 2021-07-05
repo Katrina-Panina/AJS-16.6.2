@@ -51,7 +51,8 @@ const character2 = {
 };
 
 test('no descriptions', () => {
-  expect(superAttack(character2)).toEqual([{
+  expect(superAttack(character2)).toEqual([
+    {
       id: 8,
       name: 'Двойной выстрел',
       icon: 'http://...',
