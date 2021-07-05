@@ -1,7 +1,7 @@
 export default function superAttack(char) {
   const { special } = char;
   if (!special) {
-   return null.
+   return null;
   }
   const outputObj = [];
   special.forEach((o) => {
