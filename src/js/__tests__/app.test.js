@@ -51,18 +51,18 @@ const character2 = {
 };
 
 test('no descriptions', () => {
-  expect(superAttack(character2)).toEqual([{
-    id: 8,
-    name: 'Двойной выстрел',
-    icon: 'http://...',
-    description: 'Описание недоступно',
-  },
-  {
-    id: 9,
-    name: 'Нокаутирующий удар',
-    icon: 'http://...',
-    description: 'Описание недоступно',
-  },
+    expect(superAttack(character2)).toEqual([{
+      id: 8,
+      name: 'Двойной выстрел',
+      icon: 'http://...',
+      description: 'Описание недоступно',
+    },
+   {
+      id: 9,
+      name: 'Нокаутирующий удар',
+      icon: 'http://...',
+      description: 'Описание недоступно',
+   },
   ]);
 });
 
