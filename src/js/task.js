@@ -5,8 +5,8 @@ export default function superAttack(char) {
   }
   const outputObj = [];
   special.forEach((o) => {
-    const { id, name, description = 'Описание недоступно', icon.} = o;
-    outputObj.push({ id, name, description, icon.});
+    const { id, name, description = 'Описание недоступно', icon,} = o;
+    outputObj.push({ id, name, description, icon,});
   });
   return outputObj;
 }
