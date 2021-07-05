@@ -1,12 +1,7 @@
-import specialAttack from '../task';
+import superAttack from '../task';
 
-const character = {
+const character1 = {
   name: 'Лучник',
-  type: 'Bowman',
-  health: 50,
-  level: 3,
-  attack: 40,
-  defence: 10,
   special: [
     {
       id: 8,
@@ -22,8 +17,8 @@ const character = {
   ],
 };
 
-test('Функция должна присваивать свойству description значение по дефолту, если таково свойство отсутствует', () => {
-  const template = [
+test('1/2 superAttack', () => {
+  expect(superAttack(character1)).toEqual([
     {
       id: 8,
       name: 'Двойной выстрел',
@@ -36,6 +31,45 @@ test('Функция должна присваивать свойству descri
       icon: 'http://...',
       description: 'Описание недоступно',
     },
-  ];
-  expect(specialAttack(character)).toEqual(template);
+  ]);
+});
+
+const character2 = {
+  name: 'Лучник',
+  special: [
+    {
+      id: 8,
+      name: 'Двойной выстрел',
+      icon: 'http://...',
+    },
+    {
+      id: 9,
+      name: 'Нокаутирующий удар',
+      icon: 'http://...',
+    },
+  ],
+};
+
+test('no descriptions', () => {
+  expect(superAttack(character2)).toEqual([{
+    id: 8,
+    name: 'Двойной выстрел',
+    icon: 'http://...',
+    description: 'Описание недоступно',
+  },
+  {
+    id: 9,
+    name: 'Нокаутирующий удар',
+    icon: 'http://...',
+    description: 'Описание недоступно',
+  },
+  ]);
+});
+
+const character3 = {
+  name: 'Лучник',
+};
+
+test('no special', () => {
+  expect(superAttack(character3)).toBeNull();
 });
